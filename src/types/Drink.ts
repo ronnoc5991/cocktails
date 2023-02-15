@@ -1,6 +1,3 @@
-// TODO: Not clear which properties can be null
-// will need to check everything for nullness before use
-
 export type Drink = {
   dateModified: string;
   idDrink: string;
