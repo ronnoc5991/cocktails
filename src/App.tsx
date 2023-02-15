@@ -1,20 +1,17 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Nav from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
+import Search from "./pages/Search/Search";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/drink/:idDrink" element={<DrinkDetail />} />
       </Routes>
     </div>
