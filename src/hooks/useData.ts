@@ -6,7 +6,10 @@ export default function useData<ResponseType>(
   const [data, setData] = useState<ResponseType | null>(null);
 
   useEffect(() => {
-    if (!url) return;
+    if (!url) {
+      setData(null); // is this a common wish?
+      return;
+    }
 
     const abortController = new AbortController();
 

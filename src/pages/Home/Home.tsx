@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import endpoints from "../../api/endpoints";
 import { Drink } from "../../types/Drink";
 import "./styles.css";
 
@@ -16,7 +15,7 @@ function Home() {
 
     Promise.all(
       abortControllers.map((controller) => {
-        return fetch(endpoints.randomDrink, {
+        return fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php", {
           signal: controller.signal,
         })
           .then((response) => {
