@@ -1,0 +1,32 @@
+.Text.small {
+  font-size: 12px;
+}
+
+.Text.medium {
+  font-size: 15px;
+}
+
+.Text.large {
+  font-size: 18px;
+}
+
+.Text.light,
+.Text.light-italic {
+  font-family: "Montserrat-Thin";
+}
+
+.Text.normal,
+.Text.normal-italic {
+  font-family: "Montserrat-Light";
+}
+
+.Text.bold,
+.Text.bold-italic {
+  font-family: "Montserrat-Medium";
+}
+
+.Text.light-italic,
+.Text.normal-italic,
+.Text.bold-italic {
+  font-style: italic;
+}
