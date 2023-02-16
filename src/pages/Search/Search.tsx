@@ -2,7 +2,7 @@ import { useState } from "react";
 import classNames from "classnames";
 import { LookupByNameResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
-import useData from "../../hooks/useData";
+import useDebouncedData from "../../hooks/useDebouncedData";
 import DrinkCardDisplay from "../../components/organisms/DrinkCardDisplay/DrinkCardDisplay";
 import Input from "../../components/atoms/Input/Input";
 import "./styles.css";
@@ -18,7 +18,7 @@ function Search({ className }: Props) {
     ? `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`
     : null;
 
-  const data = useData<LookupByNameResponse>(url);
+  const data = useDebouncedData<LookupByNameResponse>(url, 300);
 
   return (
     <div className={classNames("Search", className)}>
