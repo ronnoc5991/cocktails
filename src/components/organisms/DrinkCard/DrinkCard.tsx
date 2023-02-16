@@ -2,10 +2,12 @@ import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import { Drink } from "../../../types/Drink";
 import Image from "../../atoms/Image/Image";
-import Text from "../../atoms/Text/Text";
+import DrinkDetails from "../../molecules/DrinkDetails/DrinkDetails";
 import "./styles.css";
 
 type Props = BaseProps & { drink: Drink };
+
+// TODO: if a card image is loading, pulse gray the other stuff?
 
 function DrinkCard({ drink, className }: Props) {
   return (
@@ -17,15 +19,7 @@ function DrinkCard({ drink, className }: Props) {
         width={700}
         className="image"
       />
-      <Text as="span" size="large" variant="bold" className="text">
-        {drink.strDrink}
-      </Text>
-      <Text as="span" variant="normal-italic" className="text">
-        {drink.strCategory}
-      </Text>
-      <Text as="span" variant="normal-italic" className="text">
-        {drink.strAlcoholic}
-      </Text>
+      <DrinkDetails drink={drink} variant="small" />
     </div>
   );
 }

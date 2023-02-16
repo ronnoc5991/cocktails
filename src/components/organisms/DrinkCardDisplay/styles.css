@@ -4,5 +4,5 @@
 }
 
 .DrinkCardDisplay .link {
-  margin-bottom: var(--default-vertical-margin);
+  margin-bottom: var(--vertical-spacing-large);
 }

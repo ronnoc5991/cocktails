@@ -10,10 +10,6 @@ type Props = BaseProps & {
   width?: HTMLImageElement["width"];
 };
 
-// TODO: allow us to opt out of fade in behavior?
-// could change class name to is=loading
-// if isloading, opacity: 0
-
 function Image({ src, alt, height, width, className }: Props) {
   const [isLoaded, setIsLoaded] = useState(false);
 

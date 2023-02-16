@@ -1,11 +1,8 @@
 import { Drink } from "../../../types/Drink";
+import { Ingredient } from "../../../types/Ingredient";
 
-type Ingredient = { name: string; measurement: string | null };
-
-type IngredientList = Array<Ingredient>;
-
-export function getIngredientList(drink: Drink): IngredientList {
-  const list: IngredientList = [];
+export function getIngredientList(drink: Drink): Array<Ingredient> {
+  const list: Array<Ingredient> = [];
 
   // TODO: leave a comment here explaining these numbers?
   for (let i = 1; i <= 15; i++) {

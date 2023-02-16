@@ -5,13 +5,9 @@ import { BaseProps } from "../../types/BaseProps";
 import useData from "../../hooks/useData";
 import { getIngredientList } from "./utils/getIngredientList";
 import Image from "../../components/atoms/Image/Image";
-import Heading from "../../components/atoms/Heading/Heading";
-import Text from "../../components/atoms/Text/Text";
 import "./styles.css";
-
-// need a wrapper around the image?
-// to control the space that is taken up?
-// position everything in the viewport
+import DrinkDetails from "../../components/molecules/DrinkDetails/DrinkDetails";
+import IngredientList from "../../components/organisms/IngredientList/IngredientList";
 
 // TODO: Should we create an object that contains different image sizes?
 // could store the property name of the Drink, along with the size of the image it returns?
@@ -36,25 +32,10 @@ function DrinkDetail({ className }: Props) {
             alt={drink.strDrink}
             height={700}
             width={700}
+            className="image"
           />
-          <Heading as="h1" size="medium" variant="bold">
-            {drink.strDrink}
-          </Heading>
-          <Text as="span">{drink.strAlcoholic}</Text>
-          <Text as="span">{drink.strCategory}</Text>
-          <Text as="span">{drink.strGlass}</Text>
-          <ul>
-            {getIngredientList(drink).map((ingredient, index) => {
-              return (
-                <li key={`ingredient-${index}`}>
-                  <Text as="span">
-                    {ingredient.name}{" "}
-                    {ingredient.measurement && <>- {ingredient.measurement}</>}
-                  </Text>
-                </li>
-              );
-            })}
-          </ul>
+          <DrinkDetails drink={drink} variant="large" className="details" />
+          <IngredientList items={getIngredientList(drink)} />
         </>
       )}
     </div>

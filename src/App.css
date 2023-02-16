@@ -10,5 +10,5 @@
 }
 
 .page {
-  margin-top: var(--default-vertical-margin);
+  margin-top: var(--vertical-spacing-large);
 }

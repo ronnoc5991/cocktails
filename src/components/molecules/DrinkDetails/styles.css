@@ -1,0 +1,14 @@
+.DrinkDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.DrinkDetails .name {
+  /* TODO: css var? */
+  margin-bottom: 12px;
+}
+
+.DrinkDetails .detail:not(:last-child) {
+  /* TODO: css var? */
+  margin-bottom: 5px;
+}

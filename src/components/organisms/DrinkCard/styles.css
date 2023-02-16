@@ -1,12 +1,9 @@
 .DrinkCard {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .DrinkCard > .image {
   margin-bottom: 12px;
-}
-
-.DrinkCard > .text:not(:last-child) {
-  margin-bottom: 5px;
 }
