@@ -1,0 +1,14 @@
+.App {
+  position: relative;
+}
+
+.nav,
+.page {
+  /* css var for this? */
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.page {
+  margin-top: var(--default-vertical-margin);
+}

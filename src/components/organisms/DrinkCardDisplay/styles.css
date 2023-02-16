@@ -1,0 +1,8 @@
+.DrinkCardDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+.DrinkCardDisplay .link {
+  margin-bottom: var(--default-vertical-margin);
+}

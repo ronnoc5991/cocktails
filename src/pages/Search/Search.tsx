@@ -1,11 +1,17 @@
 import { useState } from "react";
+import classNames from "classnames";
 import { LookupByNameResponse } from "../../types/apiResponses";
+import { BaseProps } from "../../types/BaseProps";
 import useData from "../../hooks/useData";
+import DrinkCardDisplay from "../../components/organisms/DrinkCardDisplay/DrinkCardDisplay";
 import Input from "../../components/atoms/Input/Input";
-import SearchResultsDisplay from "../../components/organisms/SearchResultsDisplay/SearchResultsDisplay";
 import "./styles.css";
 
-function Search() {
+// TODO: get rid of nested ternary in the render here
+
+type Props = BaseProps & {};
+
+function Search({ className }: Props) {
   const [query, setQuery] = useState("");
 
   const url: string | null = query
@@ -14,10 +20,8 @@ function Search() {
 
   const data = useData<LookupByNameResponse>(url);
 
-  console.log(data);
-
   return (
-    <div className="Search">
+    <div className={classNames("Search", className)}>
       <Input
         value={query}
         type="text"
@@ -25,8 +29,10 @@ function Search() {
       />
       {!data ? (
         <>Please enter a search term</>
+      ) : data.drinks ? (
+        <DrinkCardDisplay drinks={data.drinks} />
       ) : (
-        <SearchResultsDisplay results={data} />
+        <>No Results Found</>
       )}
     </div>
   );
