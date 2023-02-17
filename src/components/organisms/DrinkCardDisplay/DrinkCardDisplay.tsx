@@ -12,7 +12,7 @@ function DrinkCardDisplay({ drinks, className }: Props) {
     <CardDisplay className={classNames(className)}>
       {drinks &&
         drinks.map((drink) => (
-          <Link to={`/drink/${drink.idDrink}`} key={drink.idDrink}>
+          <Link to={`/drinks/${drink.idDrink}`} key={drink.idDrink}>
             <DrinkCard drink={drink} />
           </Link>
         ))}

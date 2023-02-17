@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import paths from "./paths";
 import Nav from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
@@ -17,13 +18,13 @@ function App() {
     <div className="App">
       <Nav className="nav" />
       <Routes>
-        <Route path="/" element={<Home className="page" />} />
+        <Route path={paths.home} element={<Home className="page" />} />
         <Route
-          path="/search/drinks"
+          path={paths["drink-search"]}
           element={<DrinkSearch className="page" />}
         />
         <Route
-          path="/drink/:idDrink"
+          path={paths["drink-detail"]}
           element={<DrinkDetail className="page" />}
         />
       </Routes>

@@ -3,17 +3,17 @@ import { BaseProps } from "../../../types/BaseProps";
 import "./styles.css";
 
 export type InputProps = BaseProps & {
-  value: string;
   type: "text";
+  value: string;
   onChange: (value: string) => void;
 };
 
-function Input({ value, type, onChange, className }: InputProps) {
+function Input({ type, value, onChange, className }: InputProps) {
   return (
     <input
       className={classNames("Input", className)}
-      value={value}
       type={type}
+      value={value}
       onChange={(event) => onChange(event.target.value)}
     />
   );

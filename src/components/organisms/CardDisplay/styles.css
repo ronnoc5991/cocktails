@@ -1,8 +1,5 @@
 .CardDisplay {
   display: flex;
   flex-direction: column;
-}
-
-.CardDisplay > *:not(:last-child) {
-  margin-bottom: var(--vertical-spacing-large);
+  row-gap: var(--vertical-spacing-large);
 }
