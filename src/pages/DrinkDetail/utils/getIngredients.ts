@@ -1,7 +1,7 @@
 import { Drink } from "../../../types/Drink";
 import { Ingredient } from "../../../types/Ingredient";
 
-export function getIngredientList(drink: Drink): Array<Ingredient> {
+export function getIngredients(drink: Drink): Array<Ingredient> {
   const list: Array<Ingredient> = [];
 
   // TODO: leave a comment here explaining these numbers?

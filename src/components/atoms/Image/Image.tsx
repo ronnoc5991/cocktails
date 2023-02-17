@@ -3,14 +3,14 @@ import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import "./styles.css";
 
-type Props = BaseProps & {
+export type ImageProps = BaseProps & {
   src: HTMLImageElement["src"];
   alt: HTMLImageElement["alt"];
   height?: HTMLImageElement["height"];
   width?: HTMLImageElement["width"];
 };
 
-function Image({ src, alt, height, width, className }: Props) {
+function Image({ src, alt, height, width, className }: ImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (

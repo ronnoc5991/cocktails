@@ -1,8 +1,0 @@
-.IngredientList > ul {
-  margin: 0;
-  padding: 0;
-}
-
-.IngredientList .heading {
-  margin-bottom: var(--vertical-spacing-small);
-}

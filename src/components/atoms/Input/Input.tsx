@@ -1,15 +1,14 @@
-import { HTMLInputTypeAttribute } from "react";
 import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import "./styles.css";
 
-type Props = BaseProps & {
+export type InputProps = BaseProps & {
   value: string;
-  type: HTMLInputTypeAttribute;
+  type: "text"; // TODO: allows for future expansion of atom
   onChange: (value: string) => void;
 };
 
-function Input({ value, type, onChange, className }: Props) {
+function Input({ value, type, onChange, className }: InputProps) {
   return (
     <input
       className={classNames("Input", className)}

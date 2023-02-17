@@ -2,25 +2,25 @@ import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import { Drink } from "../../../types/Drink";
 import Image from "../../atoms/Image/Image";
-import DrinkDetails from "../../molecules/DrinkDetails/DrinkDetails";
-import "./styles.css";
+import DrinkBasicInfo from "../DrinkBasicInfo/DrinkBasicInfo";
+import Card from "../Card/Card";
 
 type Props = BaseProps & { drink: Drink };
 
-// TODO: if a card image is loading, pulse gray the other stuff?
-
 function DrinkCard({ drink, className }: Props) {
+  const image = (
+    <Image
+      src={drink.strDrinkThumb}
+      alt={drink.strDrink}
+      height={700}
+      width={700}
+    />
+  );
+
+  const content = <DrinkBasicInfo drink={drink} nameAs="h1" />;
+
   return (
-    <div className={classNames("DrinkCard", className)}>
-      <Image
-        src={drink.strDrinkThumb}
-        alt={drink.strDrink}
-        height={700}
-        width={700}
-        className="image"
-      />
-      <DrinkDetails drink={drink} variant="small" />
-    </div>
+    <Card image={image} content={content} className={classNames(className)} />
   );
 }
 

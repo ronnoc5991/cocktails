@@ -47,9 +47,7 @@ function RandomDrinkDisplay({ count, className }: Props) {
   }, []);
 
   return (
-    <div className={classNames(className)}>
-      <DrinkCardDisplay drinks={randomDrinks} />
-    </div>
+    <DrinkCardDisplay drinks={randomDrinks} className={classNames(className)} />
   );
 }
 

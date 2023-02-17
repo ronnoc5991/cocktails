@@ -3,15 +3,12 @@ import classNames from "classnames";
 import { LookupByIdResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
 import useData from "../../hooks/useData";
-import { getIngredientList } from "./utils/getIngredientList";
+import { getIngredients } from "./utils/getIngredients";
 import Image from "../../components/atoms/Image/Image";
-import "./styles.css";
-import DrinkDetails from "../../components/molecules/DrinkDetails/DrinkDetails";
+import DrinkBasicInfo from "../../components/organisms/DrinkBasicInfo/DrinkBasicInfo";
 import IngredientList from "../../components/organisms/IngredientList/IngredientList";
-
-// TODO: Should we create an object that contains different image sizes?
-// could store the property name of the Drink, along with the size of the image it returns?
-// use those when using the images?
+import DrinkInstructions from "../../components/organisms/DrinkInstructions/DrinkInstructions";
+import "./styles.css";
 
 type Props = BaseProps & {};
 
@@ -34,8 +31,15 @@ function DrinkDetail({ className }: Props) {
             width={700}
             className="image"
           />
-          <DrinkDetails drink={drink} variant="large" className="details" />
-          <IngredientList items={getIngredientList(drink)} />
+          <DrinkBasicInfo drink={drink} nameAs="h1" className="section" />
+          <IngredientList
+            ingredients={getIngredients(drink)}
+            className="section"
+          />
+          <DrinkInstructions
+            instructions={drink.strInstructions}
+            className="section"
+          />
         </>
       )}
     </div>

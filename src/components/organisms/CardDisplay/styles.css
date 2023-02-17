@@ -1,8 +1,8 @@
-.DrinkCardDisplay {
+.CardDisplay {
   display: flex;
   flex-direction: column;
 }
 
-.DrinkCardDisplay .link {
+.CardDisplay > *:not(:last-child) {
   margin-bottom: var(--vertical-spacing-large);
 }

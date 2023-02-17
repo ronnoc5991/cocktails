@@ -1,9 +1,0 @@
-.DrinkCard {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.DrinkCard > .image {
-  margin-bottom: 12px;
-}

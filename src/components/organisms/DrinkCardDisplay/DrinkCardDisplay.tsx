@@ -2,24 +2,20 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { BaseProps } from "../../../types/BaseProps";
 import { Drink } from "../../../types/Drink";
+import CardDisplay from "../CardDisplay/CardDisplay";
 import DrinkCard from "../DrinkCard/DrinkCard";
-import "./styles.css";
 
 type Props = BaseProps & { drinks: Array<Drink> };
 
 function DrinkCardDisplay({ drinks, className }: Props) {
   return (
-    <div className={classNames("DrinkCardDisplay", className)}>
+    <CardDisplay className={classNames(className)}>
       {drinks.map((drink) => (
-        <Link
-          to={`/drink/${drink.idDrink}`}
-          key={drink.idDrink}
-          className="link"
-        >
+        <Link to={`/drink/${drink.idDrink}`} key={drink.idDrink}>
           <DrinkCard drink={drink} />
         </Link>
       ))}
-    </div>
+    </CardDisplay>
   );
 }
 

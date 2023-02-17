@@ -1,9 +1,9 @@
 :root {
   --default-border-radius: 12px;
 
-  --vertical-spacing-small: 24px;
-  --vertical-spacing-medium: 32px;
-  --vertical-spacing-large: 40px;
+  --vertical-spacing-small: 12px;
+  --vertical-spacing-medium: 24px;
+  --vertical-spacing-large: 36px;
 
   --transition-duration-fast: 300ms;
   --transition-duration-medium: 500ms;

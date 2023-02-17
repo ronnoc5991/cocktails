@@ -5,7 +5,7 @@ import { FontSize } from "../../../types/FontSize";
 import { FontVariant } from "../../../types/FontVariant";
 import "./styles.css";
 
-type Props = BaseProps & {
+export type HeadingProps = BaseProps & {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size?: FontSize;
   variant?: FontVariant;
@@ -17,7 +17,7 @@ function Heading({
   variant = "normal",
   className,
   children,
-}: PropsWithChildren<Props>) {
+}: PropsWithChildren<HeadingProps>) {
   const Element = as;
   return (
     <Element className={classNames("Heading", size, variant, className)}>

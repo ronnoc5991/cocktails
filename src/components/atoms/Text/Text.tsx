@@ -5,7 +5,7 @@ import { FontSize } from "../../../types/FontSize";
 import { FontVariant } from "../../../types/FontVariant";
 import "./styles.css";
 
-type Props = BaseProps & {
+export type TextProps = BaseProps & {
   as: "p" | "span";
   size?: FontSize;
   variant?: FontVariant;
@@ -17,7 +17,7 @@ function Text({
   variant = "normal",
   className,
   children,
-}: PropsWithChildren<Props>) {
+}: PropsWithChildren<TextProps>) {
   const Element = as;
 
   return (
