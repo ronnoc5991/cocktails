@@ -1,7 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import classNames from "classnames";
-import { BaseProps } from "../../types/BaseProps";
-import SearchBox from "../../components/molecules/SearchBox/SearchBox";
+import { BaseProps } from "../../../types/BaseProps";
+import SearchBox from "../../molecules/SearchBox/SearchBox";
 import "./styles.css";
 
 type Props<ResponseType> = BaseProps & {
