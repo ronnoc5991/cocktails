@@ -10,6 +10,11 @@
   --transition-duration-slow: 700ms;
 
   --color-white: #ffffff;
+  --color-black: #000000;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
