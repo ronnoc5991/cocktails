@@ -4,7 +4,7 @@ import "./styles.css";
 
 export type InputProps = BaseProps & {
   value: string;
-  type: "text"; // TODO: allows for future expansion of atom
+  type: "text";
   onChange: (value: string) => void;
 };
 

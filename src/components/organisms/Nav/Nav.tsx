@@ -6,6 +6,8 @@ import "./styles.css";
 
 type Props = BaseProps & {};
 
+// pull these link strings out into an object and use there here as well as in the router in App.tsx
+
 function Nav({ className }: Props) {
   return (
     <nav className={classNames("Nav", className)}>
@@ -18,7 +20,7 @@ function Nav({ className }: Props) {
           </Link>
         </li>
         <li>
-          <Link to="/search">
+          <Link to="/search/drinks">
             <Text as="span" size="large">
               Search
             </Text>

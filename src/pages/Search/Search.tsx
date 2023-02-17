@@ -1,39 +1,29 @@
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import classNames from "classnames";
-import { LookupByNameResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
-import useDebouncedData from "../../hooks/useDebouncedData";
-import DrinkCardDisplay from "../../components/organisms/DrinkCardDisplay/DrinkCardDisplay";
-import Input from "../../components/atoms/Input/Input";
+import SearchBox from "../../components/molecules/SearchBox/SearchBox";
 import "./styles.css";
 
-// TODO: get rid of nested ternary in the render here
+type Props<ResponseType> = BaseProps & {
+  baseUrl: string;
+  ResultsDisplay: FunctionComponent<ResponseType>;
+};
 
-type Props = BaseProps & {};
-
-function Search({ className }: Props) {
-  const [query, setQuery] = useState("");
-
-  const url: string | null = query
-    ? `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`
-    : null;
-
-  const data = useDebouncedData<LookupByNameResponse>(url, 300);
+function Search<ResponseType>({
+  baseUrl,
+  ResultsDisplay,
+  className,
+}: Props<ResponseType>) {
+  const [data, setData] = useState<ResponseType>();
 
   return (
     <div className={classNames("Search", className)}>
-      <Input
-        value={query}
-        type="text"
-        onChange={(newQuery) => setQuery(newQuery)}
+      <SearchBox
+        baseUrl={baseUrl}
+        onDataReceived={setData}
+        className="search-box"
       />
-      {!data ? (
-        <>Please enter a search term</>
-      ) : data.drinks ? (
-        <DrinkCardDisplay drinks={data.drinks} />
-      ) : (
-        <>No Results Found</>
-      )}
+      {data && <ResultsDisplay {...data} />}
     </div>
   );
 }
