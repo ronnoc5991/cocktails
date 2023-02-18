@@ -3,8 +3,8 @@
   height: 100%;
   transition: opacity var(--transition-duration-fast) ease-in-out;
   border-radius: var(--default-border-radius);
-}
 
-.Image:not(.is-loaded) {
-  opacity: 0;
+  &:not(.is-loaded) {
+    opacity: 0;
+  }
 }

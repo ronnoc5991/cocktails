@@ -1,0 +1,12 @@
+.List {
+  margin: 0;
+  padding-left: 14px;
+
+  &.is-unordered {
+    list-style-type: circle;
+  }
+
+  &.is-ordered {
+    list-style-type: decimal;
+  }
+}

@@ -1,8 +1,0 @@
-.ContentSection {
-  display: flex;
-  flex-direction: column;
-}
-
-.ContentSection .title-wrapper {
-  margin-bottom: var(--vertical-spacing-small);
-}

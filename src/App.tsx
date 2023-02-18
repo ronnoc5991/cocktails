@@ -4,7 +4,7 @@ import Nav from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
 import DrinkSearch from "./pages/DrinkSearch/DrinkSearch";
-import "./App.css";
+import "./App.scss";
 
 // fix the double api call in search
 // fix the api call in home

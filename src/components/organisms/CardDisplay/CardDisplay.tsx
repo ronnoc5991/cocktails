@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
-import "./styles.css";
+import "./styles.scss";
 
 export type CardDisplayProps = BaseProps;
 

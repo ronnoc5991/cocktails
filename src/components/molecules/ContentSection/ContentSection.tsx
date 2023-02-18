@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
-import "./styles.css";
+import "./styles.scss";
 
 export type ContentSectionProps = BaseProps & {
   title: JSX.Element;

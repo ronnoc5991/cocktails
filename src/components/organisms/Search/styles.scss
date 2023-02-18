@@ -1,0 +1,8 @@
+.Search {
+  display: flex;
+  flex-direction: column;
+
+  .search-box {
+    margin-bottom: var(--vertical-spacing-large);
+  }
+}

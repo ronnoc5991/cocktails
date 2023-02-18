@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import { FontSize } from "../../../types/FontSize";
 import { FontVariant } from "../../../types/FontVariant";
-import "./styles.css";
+import "./styles.scss";
 
 export type TextProps = BaseProps & {
   as: "p" | "span";

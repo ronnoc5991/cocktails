@@ -1,5 +1,0 @@
-.Card {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--vertical-spacing-small);
-}

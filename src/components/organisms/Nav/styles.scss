@@ -5,16 +5,16 @@
   padding-bottom: 14px;
   background-color: var(--color-white);
   box-shadow: rgb(0 0 0 / 16%) 0 0 6px;
-}
 
-.Nav > ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  column-gap: 15px;
-  justify-content: flex-end;
-}
+  > ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    column-gap: 15px;
+    justify-content: flex-end;
+  }
 
-.Nav li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }

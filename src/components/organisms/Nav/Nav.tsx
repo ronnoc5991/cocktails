@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import paths from "../../../paths";
 import { BaseProps } from "../../../types/BaseProps";
 import Text from "../../atoms/Text/Text";
-import "./styles.css";
+import "./styles.scss";
 
 type Props = BaseProps & {};
 

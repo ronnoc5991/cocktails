@@ -1,0 +1,21 @@
+@import "./styles/mixins";
+
+.App {
+  position: relative;
+
+  .nav,
+  .page {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .page {
+    margin-top: var(--vertical-spacing-large);
+  }
+
+  @include medium-screens {
+  }
+
+  @include large-screens {
+  }
+}

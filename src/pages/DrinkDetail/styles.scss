@@ -1,0 +1,13 @@
+.DrinkDetail {
+  .image {
+    margin-bottom: var(--vertical-spacing-large);
+  }
+
+  .section:not(:last-child) {
+    margin-bottom: var(--vertical-spacing-medium);
+  }
+
+  .section:last-child {
+    margin-bottom: var(--vertical-spacing-large);
+  }
+}

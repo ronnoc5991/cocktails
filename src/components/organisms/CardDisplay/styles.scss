@@ -1,0 +1,33 @@
+@import "../../../styles/mixins";
+
+.CardDisplay {
+  --cards-per-row: 1;
+  --gap: var(--horizontal-spacing-medium);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+
+  & > * {
+    width: calc(
+      (
+        (100% - var(--gap) * calc(var(--cards-per-row) - 1)) /
+          var(--cards-per-row)
+      )
+    );
+  }
+
+  @include medium-screens {
+    --cards-per-row: 2;
+    --gap: var(--horizontal-spacing-large);
+
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include large-screens {
+    --cards-per-row: 4;
+  }
+}

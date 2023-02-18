@@ -1,0 +1,13 @@
+@import "./breakpoints";
+
+@mixin medium-screens {
+  @media (min-width: #{$screen-medium}) {
+    @content;
+  }
+}
+
+@mixin large-screens {
+  @media (min-width: #{$screen-large}) {
+    @content;
+  }
+}

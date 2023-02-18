@@ -8,7 +8,7 @@ import Image from "../../components/atoms/Image/Image";
 import DrinkBasicInfo from "../../components/organisms/DrinkBasicInfo/DrinkBasicInfo";
 import IngredientList from "../../components/organisms/IngredientList/IngredientList";
 import DrinkInstructions from "../../components/organisms/DrinkInstructions/DrinkInstructions";
-import "./styles.css";
+import "./styles.scss";
 
 type Props = BaseProps & {};
 
