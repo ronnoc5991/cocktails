@@ -1,13 +1,39 @@
+@import "../../styles/mixins";
+
 .DrinkDetail {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "info"
+    "ingredients"
+    "instructions";
+  gap: var(--vertical-spacing-medium);
+  align-items: center;
+
   .image {
-    margin-bottom: var(--vertical-spacing-large);
+    grid-area: image;
+    aspect-ratio: 1 / 1;
   }
 
-  .section:not(:last-child) {
-    margin-bottom: var(--vertical-spacing-medium);
+  .info {
+    grid-area: info;
   }
 
-  .section:last-child {
-    margin-bottom: var(--vertical-spacing-large);
+  .ingredients {
+    grid-area: ingredients;
+  }
+
+  .instructions {
+    grid-area: instructions;
+  }
+
+  @include medium-screens {
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "image info info"
+      "image info info"
+      "ingredients ingredients ingredients"
+      "instructions instructions instructions";
   }
 }

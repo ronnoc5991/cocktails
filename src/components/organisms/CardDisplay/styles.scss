@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: var(--gap);
 
   & > * {
@@ -16,11 +17,12 @@
           var(--cards-per-row)
       )
     );
+    max-width: 500px;
   }
 
   @include medium-screens {
     --cards-per-row: 2;
-    --gap: var(--horizontal-spacing-large);
+    --gap: var(--horizontal-spacing-medium);
 
     align-items: stretch;
     flex-direction: row;
@@ -29,5 +31,6 @@
 
   @include large-screens {
     --cards-per-row: 4;
+    --gap: var(--horizontal-spacing-large);
   }
 }

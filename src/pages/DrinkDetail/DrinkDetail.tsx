@@ -31,14 +31,20 @@ function DrinkDetail({ className }: Props) {
             width={700}
             className="image"
           />
-          <DrinkBasicInfo drink={drink} nameAs="h1" className="section" />
+          <DrinkBasicInfo
+            name={drink.strDrink}
+            category={drink.strCategory}
+            alcoholic={drink.strAlcoholic}
+            nameAs="h1"
+            className="info"
+          />
           <IngredientList
             ingredients={getIngredients(drink)}
-            className="section"
+            className="ingredients"
           />
           <DrinkInstructions
             instructions={drink.strInstructions}
-            className="section"
+            className="instructions"
           />
         </>
       )}

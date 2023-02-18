@@ -3,6 +3,7 @@
   flex-direction: column;
 
   .search-box {
-    margin-bottom: var(--vertical-spacing-large);
+    margin: 0 auto var(--vertical-spacing-large) auto;
+    max-width: 500px;
   }
 }
