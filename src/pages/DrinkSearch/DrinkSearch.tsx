@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
 import { LookupByNameResponse } from "../../types/apiResponses";
 import DrinkCardDisplay from "../../components/organisms/DrinkCardDisplay/DrinkCardDisplay";
-import Search from "../../components/organisms/Search/Search";
+import Search from "../../templates/Search/Search";
 
 type Props = BaseProps;
 
