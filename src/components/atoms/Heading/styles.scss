@@ -1,17 +1,19 @@
+@import "../../../styles/mixins";
+
 .Heading {
   margin: 0;
   line-height: 1.5;
 
   &.small {
-    font-size: 18px;
+    @include fluid-type($min-vw, $max-vw, 18px, 26px);
   }
 
   &.medium {
-    font-size: 22px;
+    @include fluid-type($min-vw, $max-vw, 22px, 30px);
   }
 
   &.large {
-    font-size: 26px;
+    @include fluid-type($min-vw, $max-vw, 26px, 34px);
   }
 
   &.light,
