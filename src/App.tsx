@@ -3,18 +3,13 @@ import Nav, { NavProps } from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
 import DrinkSearchByName from "./pages/DrinkSearchByName/DrinkSearchByName";
+import HomeIcon from "./assets/svg/home.svg";
+import SearchIcon from "./assets/svg/search.svg";
 import "./App.scss";
 
-// fix the double api call in search
-// fix the api call in home
-
-// can implement ingredient search route
-// and ingredient card display
-// and ingredient card
-
 const navItems: NavProps["items"] = [
-  { path: "/", label: "Home" },
-  { path: "/drinks/search-by-name", label: "Search for a Drink" },
+  { path: "/", icon: HomeIcon, iconAlt: "Home" },
+  { path: "/drinks/search-by-name", icon: SearchIcon, iconAlt: "Search" },
 ];
 
 function App() {

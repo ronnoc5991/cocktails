@@ -10,11 +10,15 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     column-gap: var(--horizontal-spacing-small);
   }
 
   li {
     list-style: none;
+  }
+
+  .icon {
+    height: 40px;
   }
 }

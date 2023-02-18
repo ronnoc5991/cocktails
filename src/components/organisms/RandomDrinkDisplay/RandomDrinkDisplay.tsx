@@ -20,15 +20,10 @@ function RandomDrinkDisplay({ count, className }: Props) {
       abortControllers.map((controller) => {
         return fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php", {
           signal: controller.signal,
-        })
-          .then((response) => {
-            if (response.ok) return response.json();
-            return Promise.reject(response);
-          })
-          .catch((error) => {
-            if (controller.signal.aborted) return;
-            console.error(error.status);
-          });
+        }).then((response) => {
+          if (response.ok) return response.json();
+          return Promise.reject(response);
+        });
       })
     )
       .then((data) => {

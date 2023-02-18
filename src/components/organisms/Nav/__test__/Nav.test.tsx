@@ -4,8 +4,8 @@ import { expect } from "vitest";
 import Nav, { NavProps } from "../Nav";
 
 const mockItems: NavProps["items"] = [
-  { path: "https://www.path1.com/", label: "path1" },
-  { path: "https://www.path2.com/", label: "path2" },
+  { path: "https://www.path1.com/", icon: "icon1", iconAlt: "" },
+  { path: "https://www.path2.com/", icon: "icon2", iconAlt: "" },
 ];
 
 describe("The Nav component", () => {
@@ -17,7 +17,6 @@ describe("The Nav component", () => {
     mockItems.forEach((item, index) => {
       const link = links[index];
       expect(link.href).toBe(item.path);
-      expect(link.innerHTML.includes(item.label)).toBeTruthy();
     });
   });
 });
