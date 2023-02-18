@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
-import { LookupByIdResponse } from "../../types/apiResponses";
+import { DrinkLookupByIdResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
 import useData from "../../hooks/useData";
 import { getIngredients } from "./utils/getIngredients";
@@ -14,7 +14,7 @@ type Props = BaseProps & {};
 
 function DrinkDetail({ className }: Props) {
   const { idDrink } = useParams();
-  const data = useData<LookupByIdResponse>(
+  const data = useData<DrinkLookupByIdResponse>(
     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`
   );
 

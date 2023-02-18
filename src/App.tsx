@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav, { NavProps } from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
-import DrinkSearch from "./pages/DrinkSearch/DrinkSearch";
+import DrinkSearchByName from "./pages/DrinkSearchByName/DrinkSearchByName";
 import "./App.scss";
 
 // fix the double api call in search
@@ -14,7 +14,7 @@ import "./App.scss";
 
 const navItems: NavProps["items"] = [
   { path: "/", label: "Home" },
-  { path: "/drink-search", label: "Search for a Drink" },
+  { path: "/drinks/search-by-name", label: "Search for a Drink" },
 ];
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home className="page" />} />
         <Route
-          path="/drink-search"
-          element={<DrinkSearch className="page" />}
+          path="/drinks/search-by-name"
+          element={<DrinkSearchByName className="page" />}
         />
         <Route
           path="/drinks/:idDrink"

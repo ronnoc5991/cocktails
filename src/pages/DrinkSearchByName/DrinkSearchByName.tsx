@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
-import { LookupByNameResponse } from "../../types/apiResponses";
+import { DrinkSearchByNameResponse } from "../../types/apiResponses";
 import DrinkCardDisplay from "../../components/organisms/DrinkCardDisplay/DrinkCardDisplay";
 import Search from "../../templates/Search/Search";
 
 type Props = BaseProps;
 
-function DrinkSearch({ className }: Props) {
+function DrinkSearchByName({ className }: Props) {
   return (
-    <Search<LookupByNameResponse>
+    <Search<DrinkSearchByNameResponse>
       baseUrl="https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
       ResultsDisplay={DrinkCardDisplay}
       className={classNames(className)}
@@ -16,4 +16,4 @@ function DrinkSearch({ className }: Props) {
   );
 }
 
-export default DrinkSearch;
+export default DrinkSearchByName;

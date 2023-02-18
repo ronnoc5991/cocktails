@@ -4,6 +4,6 @@ type APIBaseResponse<T> = { drinks: Array<T> | null };
 
 export type RandomDrinkResponse = APIBaseResponse<Drink>;
 
-export type LookupByIdResponse = APIBaseResponse<Drink>;
+export type DrinkLookupByIdResponse = APIBaseResponse<Drink>;
 
-export type LookupByNameResponse = APIBaseResponse<Drink>;
+export type DrinkSearchByNameResponse = APIBaseResponse<Drink>;
