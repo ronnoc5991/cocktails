@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import paths from "./paths";
-import Nav from "./components/organisms/Nav/Nav";
+import Nav, { NavProps } from "./components/organisms/Nav/Nav";
 import Home from "./pages/Home/Home";
 import DrinkDetail from "./pages/DrinkDetail/DrinkDetail";
 import DrinkSearch from "./pages/DrinkSearch/DrinkSearch";
@@ -13,18 +12,23 @@ import "./App.scss";
 // and ingredient card display
 // and ingredient card
 
+const navItems: NavProps["items"] = [
+  { path: "/", label: "Home" },
+  { path: "/drink-search", label: "Search for a Drink" },
+];
+
 function App() {
   return (
     <div className="App">
-      <Nav className="nav" />
+      <Nav items={navItems} className="nav" />
       <Routes>
-        <Route path={paths.home} element={<Home className="page" />} />
+        <Route path="/" element={<Home className="page" />} />
         <Route
-          path={paths["drink-search"]}
+          path="/drink-search"
           element={<DrinkSearch className="page" />}
         />
         <Route
-          path={paths["drink-detail"]}
+          path="/drinks/:idDrink"
           element={<DrinkDetail className="page" />}
         />
       </Routes>
