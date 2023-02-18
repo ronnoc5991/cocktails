@@ -1,8 +1,8 @@
 .Nav {
   position: sticky;
   top: 0px;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: var(--vertical-spacing-small);
+  padding-bottom: var(--vertical-spacing-small);
   background-color: var(--color-white);
   box-shadow: rgb(0 0 0 / 16%) 0 0 6px;
 
@@ -10,8 +10,8 @@
     margin: 0;
     padding: 0;
     display: flex;
-    column-gap: 15px;
     justify-content: flex-end;
+    column-gap: var(--horizontal-spacing-small);
   }
 
   li {
