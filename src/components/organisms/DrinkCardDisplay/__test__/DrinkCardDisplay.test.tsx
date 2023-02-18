@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { expect } from "vitest";
-import mockDrink from "../../../../mocks/mockDrink";
+import mockDrink from "../../../../mockData/mockDrink";
 import DrinkCardDisplay from "../DrinkCardDisplay";
 
 describe("The DrinkCardDisplay component", () => {

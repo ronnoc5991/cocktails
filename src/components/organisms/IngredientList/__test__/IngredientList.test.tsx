@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { expect } from "vitest";
-import mockDrink from "../../../../mocks/mockDrink";
+import mockDrink from "../../../../mockData/mockDrink";
 import { getIngredients } from "../../../../pages/DrinkDetail/utils/getIngredients";
 import IngredientList from "../IngredientList";
 

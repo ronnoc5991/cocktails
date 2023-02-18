@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { expect } from "vitest";
-import mockDrink from "../../../../mocks/mockDrink";
+import mockDrink from "../../../../mockData/mockDrink";
 import DrinkInstructions from "../DrinkInstructions";
 
 describe("The DrinkInstructions component", () => {
