@@ -2,9 +2,7 @@ import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
 import RandomDrinkDisplay from "../../components/organisms/RandomDrinkDisplay/RandomDrinkDisplay";
 
-const RANDOM_DRINK_COUNT = 10;
-
-// TODO: maybe add a hero image?
+const RANDOM_DRINK_COUNT = 12;
 
 type Props = BaseProps;
 
