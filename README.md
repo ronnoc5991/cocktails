@@ -2,9 +2,23 @@ Hello!
 
 Thank you for taking the time to look through this code.
 
+How to run the solution:
+
+- Clone the repo
+- run npm install && npm run dev
+- click on the link in the terminal
+
+Or:
+
+- open the file called index.html in the included folder in a browser
+
 Why React?
 
-Composition over Inheritance
+I chose to use React instead of Vue because I like the 'state in -> DOM out' approach. I am also more familiar with the React ecosystem (e.g. React Router).
+
+Basic Approach:
+
+I tried to follow the principles of atomic design/
 
 Atomic Approach
 
@@ -15,4 +29,4 @@ Atomic Approach
 Styles
 
 - Mobile first approach
-- SCSS
+- SCSS - used for the mixins and functions
