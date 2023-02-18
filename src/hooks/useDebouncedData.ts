@@ -12,7 +12,7 @@ export default function useDebouncedData<ResponseType>(
     let timeoutId: number;
 
     if (url !== debouncedUrl) {
-      timeoutId = setTimeout(() => {
+      timeoutId = window.setTimeout(() => {
         setDebouncedUrl(url);
       }, debounce);
     }
