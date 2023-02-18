@@ -1,29 +1,36 @@
 import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
-import { Drink } from "../../../types/Drink";
 import Heading, { HeadingProps } from "../../atoms/Heading/Heading";
 import Text from "../../atoms/Text/Text";
 import ContentSection from "../../molecules/ContentSection/ContentSection";
 
-type Props = BaseProps & {
-  drink: Drink;
+export type DrinkBasicInfoProps = BaseProps & {
+  name: string;
+  category: string;
+  alcoholic: string;
   nameAs: HeadingProps["as"];
 };
 
-function DrinkBasicInfo({ drink, nameAs, className }: Props) {
+function DrinkBasicInfo({
+  name,
+  category,
+  alcoholic,
+  nameAs,
+  className,
+}: DrinkBasicInfoProps) {
   const title = (
     <Heading as={nameAs} size="large" variant="bold">
-      {drink.strDrink}
+      {name}
     </Heading>
   );
 
   const body = (
     <>
       <Text as="span" variant="normal-italic">
-        {drink.strCategory}
+        {category}
       </Text>
       <Text as="span" variant="normal-italic">
-        {drink.strAlcoholic}
+        {alcoholic}
       </Text>
     </>
   );

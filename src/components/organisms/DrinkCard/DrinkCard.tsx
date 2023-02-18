@@ -17,7 +17,14 @@ function DrinkCard({ drink, className }: Props) {
     />
   );
 
-  const content = <DrinkBasicInfo drink={drink} nameAs="h1" />;
+  const content = (
+    <DrinkBasicInfo
+      name={drink.strDrink}
+      category={drink.strCategory}
+      alcoholic={drink.strAlcoholic}
+      nameAs="h1"
+    />
+  );
 
   return (
     <Card image={image} content={content} className={classNames(className)} />
