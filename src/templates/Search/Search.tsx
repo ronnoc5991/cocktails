@@ -2,8 +2,9 @@ import { FunctionComponent, useState } from "react";
 import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
 import SearchBar from "../../components/organisms/SearchBar/SearchBar";
-import "./styles.scss";
+import Text from "../../components/atoms/Text/Text";
 import useData from "../../hooks/useData";
+import "./styles.scss";
 
 type Props<ResponseType> = BaseProps & {
   baseUrl: string;
@@ -20,7 +21,7 @@ function Search<ResponseType>({
   const concatenateUrl = (query: string) =>
     query ? `${baseUrl}${query}` : null;
 
-  const data = useData<ResponseType>(concatenatedUrl);
+  const { data, isLoading } = useData<ResponseType>(concatenatedUrl);
 
   return (
     <div className={classNames("Search", className)}>
@@ -28,7 +29,12 @@ function Search<ResponseType>({
         onSearch={(query) => setConcatenatedUrl(concatenateUrl(query))}
         className="search-bar"
       />
-      {data && <ResultsDisplay {...data} />}
+      {isLoading && (
+        <Text as="span" size="large" variant="normal-italic">
+          Loading...
+        </Text>
+      )}
+      {!isLoading && data && concatenatedUrl && <ResultsDisplay {...data} />}
     </div>
   );
 }

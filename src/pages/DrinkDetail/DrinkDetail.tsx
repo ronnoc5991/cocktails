@@ -14,7 +14,7 @@ type Props = BaseProps & {};
 
 function DrinkDetail({ className }: Props) {
   const { idDrink } = useParams();
-  const data = useData<DrinkLookupByIdResponse>(
+  const { data } = useData<DrinkLookupByIdResponse>(
     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`
   );
 

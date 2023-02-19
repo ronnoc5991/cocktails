@@ -1,6 +1,8 @@
 .Search {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .search-bar {
     margin: 0 auto var(--vertical-spacing-large) auto;

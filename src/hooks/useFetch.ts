@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-// TODO: What to do with error status?
+// TODO: Look over this
 
 export default function useFetch<ResponseType>(
   url: string | null,
-  onData: (data: ResponseType) => void
-) {
+  onData: (data: ResponseType | null) => void
+): { isLoading: boolean } {
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     if (!url) return;
+
+    setIsLoading(true);
 
     const abortController = new AbortController();
 
@@ -16,8 +20,13 @@ export default function useFetch<ResponseType>(
         if (response.ok) return response.json();
         return Promise.reject(response);
       })
-      .then((data) => onData(data))
+      .then((data) => {
+        onData(data);
+        setIsLoading(false);
+      })
       .catch((error) => {
+        setIsLoading(false);
+        onData(null); // TODO: think about this
         if (abortController.signal.aborted) return;
         console.error(error.status);
       });
@@ -26,4 +35,6 @@ export default function useFetch<ResponseType>(
       abortController.abort();
     };
   }, [url]);
+
+  return { isLoading };
 }

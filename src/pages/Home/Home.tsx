@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
 import RandomDrinkDisplay from "../../components/organisms/RandomDrinkDisplay/RandomDrinkDisplay";
 
-const RANDOM_DRINK_COUNT = 12;
+const RANDOM_DRINK_COUNT = 15;
 
 type Props = BaseProps;
 
