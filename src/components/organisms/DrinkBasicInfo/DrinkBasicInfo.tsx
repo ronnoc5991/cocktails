@@ -21,7 +21,7 @@ function DrinkBasicInfo({
   return (
     <ContentSection
       title={
-        <Heading as={nameAs} size="large" variant="bold">
+        <Heading as={nameAs} size="small" variant="bold">
           {name}
         </Heading>
       }
