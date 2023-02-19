@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 import { BaseProps } from "../../../types/BaseProps";
 import { Drink } from "../../../types/Drink";
-import DrinkCardDisplay from "../DrinkCardDisplay/DrinkCardDisplay";
+import DrinkResultsDisplay from "../DrinkResultsDisplay/DrinkResultsDisplay";
 
 type Props = BaseProps & {
   count: number;
@@ -42,7 +42,10 @@ function RandomDrinkDisplay({ count, className }: Props) {
   }, []);
 
   return (
-    <DrinkCardDisplay drinks={randomDrinks} className={classNames(className)} />
+    <DrinkResultsDisplay
+      drinks={randomDrinks}
+      className={classNames(className)}
+    />
   );
 }
 

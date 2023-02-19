@@ -8,7 +8,7 @@ import DrinkCard from "../DrinkCard/DrinkCard";
 
 type Props = BaseProps & { drinks: Array<Drink> | null };
 
-function DrinkCardDisplay({ drinks, className }: Props) {
+function DrinkResultsDisplay({ drinks, className }: Props) {
   return (
     <>
       {!drinks ? (
@@ -34,4 +34,4 @@ function DrinkCardDisplay({ drinks, className }: Props) {
   );
 }
 
-export default DrinkCardDisplay;
+export default DrinkResultsDisplay;
