@@ -13,6 +13,4 @@ describe("The IngredientList component", () => {
       expect(screen.getByText(name)).toBeInTheDocument();
     });
   });
-
-  // TODO: test that amounts are rendered too?
 });

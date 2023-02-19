@@ -14,6 +14,15 @@ describe("The Button component", () => {
     expect(button.type).toBe("submit");
   });
 
+  test("renders its children", () => {
+    render(
+      <Button type="submit" onClick={() => null}>
+        Child
+      </Button>
+    );
+    expect(screen.getByText("Child")).toBeInTheDocument();
+  });
+
   test("executes its callback on click", () => {
     let count = 0;
     render(<Button type="submit" onClick={() => count++} />);
