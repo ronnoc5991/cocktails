@@ -4,11 +4,12 @@ import { DrinkLookupByIdResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
 import useFetch from "../../hooks/useFetch";
 import { getIngredients } from "./utils/getIngredients";
+import Heading from "../../components/atoms/Heading/Heading";
+import Text from "../../components/atoms/Text/Text";
 import Image from "../../components/atoms/Image/Image";
 import IngredientList from "../../components/organisms/IngredientList/IngredientList";
-import DrinkInstructions from "../../components/organisms/DrinkInstructions/DrinkInstructions";
+import ContentSection from "../../components/molecules/ContentSection/ContentSection";
 import "./styles.scss";
-import Heading from "../../components/atoms/Heading/Heading";
 
 type Props = BaseProps & {};
 
@@ -19,9 +20,6 @@ function DrinkDetail({ className }: Props) {
   );
 
   const drink = data?.drinks?.[0];
-
-  // TODO: get rid of drinkInstructions component?
-  // just do that stuff here?
 
   return (
     <div className={classNames("DrinkDetail", className)}>
@@ -39,7 +37,14 @@ function DrinkDetail({ className }: Props) {
           </Heading>
           <div className="details-wrapper">
             <IngredientList ingredients={getIngredients(drink)} />
-            <DrinkInstructions instructions={drink.strInstructions} />
+            <ContentSection
+              title={
+                <Heading as="h2" variant="bold" className="heading">
+                  Instructions
+                </Heading>
+              }
+              body={<Text as="p">{drink.strInstructions}</Text>}
+            />
           </div>
         </>
       )}
