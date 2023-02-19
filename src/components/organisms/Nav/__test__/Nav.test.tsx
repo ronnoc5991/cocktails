@@ -4,8 +4,8 @@ import { expect } from "vitest";
 import Nav, { NavProps } from "../Nav";
 
 const mockItems: NavProps["items"] = [
-  { path: "https://www.path1.com/", icon: "icon1", iconAlt: "" },
-  { path: "https://www.path2.com/", icon: "icon2", iconAlt: "" },
+  { path: "https://www.path1.com/", icon: "icon1", label: "" },
+  { path: "https://www.path2.com/", icon: "icon2", label: "" },
 ];
 
 describe("The Nav component", () => {
