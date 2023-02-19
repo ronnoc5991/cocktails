@@ -3,7 +3,7 @@ import { expect } from "vitest";
 import Heading from "../../../atoms/Heading/Heading";
 import CardDisplay from "../CardDisplay";
 
-describe("The List component", () => {
+describe("The CardDisplay component", () => {
   test("renders child elements", () => {
     const childContent = ["One", "Two", "Three"];
     const childElements = childContent.map((content) => (

@@ -5,10 +5,10 @@ import { BaseProps } from "../../types/BaseProps";
 import useFetch from "../../hooks/useFetch";
 import { getIngredients } from "./utils/getIngredients";
 import Image from "../../components/atoms/Image/Image";
-import DrinkBasicInfo from "../../components/organisms/DrinkBasicInfo/DrinkBasicInfo";
 import IngredientList from "../../components/organisms/IngredientList/IngredientList";
 import DrinkInstructions from "../../components/organisms/DrinkInstructions/DrinkInstructions";
 import "./styles.scss";
+import Heading from "../../components/atoms/Heading/Heading";
 
 type Props = BaseProps & {};
 
@@ -19,6 +19,9 @@ function DrinkDetail({ className }: Props) {
   );
 
   const drink = data?.drinks?.[0];
+
+  // TODO: get rid of drinkInstructions component?
+  // just do that stuff here?
 
   return (
     <div className={classNames("DrinkDetail", className)}>
@@ -31,21 +34,13 @@ function DrinkDetail({ className }: Props) {
             width={700}
             className="image"
           />
-          <DrinkBasicInfo
-            name={drink.strDrink}
-            category={drink.strCategory}
-            alcoholic={drink.strAlcoholic}
-            nameAs="h1"
-            className="info"
-          />
-          <IngredientList
-            ingredients={getIngredients(drink)}
-            className="ingredients"
-          />
-          <DrinkInstructions
-            instructions={drink.strInstructions}
-            className="instructions"
-          />
+          <Heading as="h1" size="large" variant="bold" className="name">
+            {drink.strDrink}
+          </Heading>
+          <div className="details-wrapper">
+            <IngredientList ingredients={getIngredients(drink)} />
+            <DrinkInstructions instructions={drink.strInstructions} />
+          </div>
         </>
       )}
     </div>
