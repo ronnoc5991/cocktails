@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 .Nav {
   position: sticky;
   top: 0px;
@@ -18,7 +20,21 @@
     list-style: none;
   }
 
+  .label {
+    display: none;
+  }
+
   .icon {
     height: 40px;
+  }
+
+  @include medium-screens {
+    .label {
+      display: block;
+    }
+
+    .icon {
+      display: none;
+    }
   }
 }

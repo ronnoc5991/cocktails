@@ -8,8 +8,12 @@ import SearchIcon from "./assets/svg/search.svg";
 import "./App.scss";
 
 const navItems: NavProps["items"] = [
-  { path: "/", icon: HomeIcon, iconAlt: "Home" },
-  { path: "/drinks/search-by-name", icon: SearchIcon, iconAlt: "Search" },
+  { path: "/", icon: HomeIcon, label: "Home" },
+  {
+    path: "/drinks/search-by-name",
+    icon: SearchIcon,
+    label: "Search for a Drink",
+  },
 ];
 
 function App() {
