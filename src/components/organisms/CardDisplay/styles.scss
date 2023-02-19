@@ -21,7 +21,7 @@
   }
 
   @include medium-screens {
-    --cards-per-row: 2;
+    --cards-per-row: 3;
     --gap: var(--horizontal-spacing-medium);
 
     align-items: stretch;
@@ -30,7 +30,7 @@
   }
 
   @include large-screens {
-    --cards-per-row: 4;
+    --cards-per-row: 5;
     --gap: var(--horizontal-spacing-large);
   }
 }
