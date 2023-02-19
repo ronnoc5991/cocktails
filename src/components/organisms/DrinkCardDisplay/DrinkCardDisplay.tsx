@@ -16,7 +16,7 @@ function DrinkCardDisplay({ drinks, className }: Props) {
           <Text as="span" size="large" variant="normal-italic">
             'Why is the rum gone?'
           </Text>
-          <Text as="span" variant="light-italic">
+          <Text as="span" variant="light">
             (No drinks found)
           </Text>
         </>

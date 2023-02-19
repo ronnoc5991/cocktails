@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { BaseProps } from "../../types/BaseProps";
 import SearchBar from "../../components/organisms/SearchBar/SearchBar";
 import Text from "../../components/atoms/Text/Text";
-import useData from "../../hooks/useData";
+import useFetch from "../../hooks/useFetch";
 import "./styles.scss";
 
 type Props<ResponseType> = BaseProps & {
@@ -21,7 +21,7 @@ function Search<ResponseType>({
   const concatenateUrl = (query: string) =>
     query ? `${baseUrl}${query}` : null;
 
-  const { data, isLoading } = useData<ResponseType>(concatenatedUrl);
+  const { data, isLoading } = useFetch<ResponseType>(concatenatedUrl);
 
   return (
     <div className={classNames("Search", className)}>

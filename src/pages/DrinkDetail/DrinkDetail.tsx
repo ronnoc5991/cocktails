@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { DrinkLookupByIdResponse } from "../../types/apiResponses";
 import { BaseProps } from "../../types/BaseProps";
-import useData from "../../hooks/useData";
+import useFetch from "../../hooks/useFetch";
 import { getIngredients } from "./utils/getIngredients";
 import Image from "../../components/atoms/Image/Image";
 import DrinkBasicInfo from "../../components/organisms/DrinkBasicInfo/DrinkBasicInfo";
@@ -14,7 +14,7 @@ type Props = BaseProps & {};
 
 function DrinkDetail({ className }: Props) {
   const { idDrink } = useParams();
-  const { data } = useData<DrinkLookupByIdResponse>(
+  const { data } = useFetch<DrinkLookupByIdResponse>(
     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`
   );
 
