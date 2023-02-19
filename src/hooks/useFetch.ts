@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 // TODO: Look over this
 
-export default function useFetch<ResponseType>(
-  url: string | null,
-  onData: (data: ResponseType | null) => void
-): { isLoading: boolean } {
+export default function useFetch<ResponseType>(url: string | null): {
+  data: ResponseType | null;
+  isLoading: boolean;
+} {
+  const [data, setData] = useState<ResponseType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -21,12 +22,12 @@ export default function useFetch<ResponseType>(
         return Promise.reject(response);
       })
       .then((data) => {
-        onData(data);
+        setData(data);
         setIsLoading(false);
       })
       .catch((error) => {
         setIsLoading(false);
-        onData(null); // TODO: think about this
+        setData(null);
         if (abortController.signal.aborted) return;
         console.error(error.status);
       });
@@ -36,5 +37,5 @@ export default function useFetch<ResponseType>(
     };
   }, [url]);
 
-  return { isLoading };
+  return { data, isLoading };
 }
