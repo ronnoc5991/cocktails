@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-// TODO: Look over this
-
 export default function useFetch<ResponseType>(url: string | null): {
   data: ResponseType | null;
   isLoading: boolean;
